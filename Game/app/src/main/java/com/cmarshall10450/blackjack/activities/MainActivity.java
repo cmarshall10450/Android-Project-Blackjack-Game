@@ -1,10 +1,10 @@
 package com.cmarshall10450.blackjack.activities;
 
 import android.os.Bundle;
-import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.cmarshall10450.blackjack.R;
@@ -22,15 +22,13 @@ public class MainActivity extends AppCompatActivity {
   private int bet;
   private boolean isRunning;
 
-  private ConstraintLayout screen;
-
-  private TextView dealerCard;
-  private TextView playerCard1;
-  private TextView playerCard2;
   private TextView handValue;
   private TextView gameStatus;
   private TextView betText;
   private TextView cashAmount;
+
+  private LinearLayout playerCardsList;
+  private LinearLayout dealerCardsList;
 
   private Button replayButton;
 
@@ -51,11 +49,6 @@ public class MainActivity extends AppCompatActivity {
     bet = 0;
     isRunning = true;
 
-    screen = findViewById(R.id.screen);
-
-    dealerCard = findViewById(R.id.dealer_card);
-    playerCard1 = findViewById(R.id.player_card_1);
-    playerCard2 = findViewById(R.id.player_card_2);
     handValue = findViewById(R.id.hand_value);
 
     double playerCash = player.getMoney();
@@ -70,6 +63,9 @@ public class MainActivity extends AppCompatActivity {
 
     replayButton = findViewById(R.id.replay_btn);
     replayButton.setVisibility(View.INVISIBLE);
+
+    playerCardsList = findViewById(R.id.player_cards_list);
+    dealerCardsList = findViewById(R.id.dealer_cards_list);
 
     update();
 
@@ -88,37 +84,37 @@ public class MainActivity extends AppCompatActivity {
   private void update() {
     showPlayerCards();
     showHandValue();
-    showDealerCard();
+    showDealerCards();
     showPlayerCash();
     showBet();
   }
 
-  private void showDealerCard() {
-    String rank = dealer.getFirstCard().getRankName();
-    String suit = dealer.getFirstCard().getSuitName();
-
-    dealerCard.setText(rank + suit);
+  private void showDealerCards() {
+    showCards(dealer, dealerCardsList);
   }
 
   private void showPlayerCards() {
+    showCards(player, playerCardsList);
+  }
+
+  private void showCards(Player player, LinearLayout linearLayout) {
     ArrayList<Card> cards = player.getHand();
 
-    String rank1 = cards.get(0).getRankName();
-    String suit1 = cards.get(0).getSuitName();
-    playerCard1.setText(rank1 + suit1);
+    linearLayout.removeAllViews();
 
-    String rank2 = cards.get(1).getRankName();
-    String suit2 = cards.get(1).getSuitName();
-    playerCard2.setText(rank2 + suit2);
+    for (Card card : cards) {
+      TextView tv = new TextView(this);
+      tv.setTextSize(48);
+      tv.setBackgroundColor(getResources().getColor(R.color.white));
+      tv.setPadding(16, 32, 16, 32);
 
-//    for (Card card : cards) {
-//      TextView tv = new TextView(this);
-//      String rank = card.getRankName();
-//      String suit = card.getSuitName();
-//      tv.setText(rank + suit);
-//
-//      screen.addView(tv);
-//    }
+
+      String rank = card.getRankName();
+      String suit = card.getSuitName();
+      tv.setText(rank + suit);
+
+      linearLayout.addView(tv);
+    }
   }
 
   private void showHandValue() {
@@ -130,14 +126,12 @@ public class MainActivity extends AppCompatActivity {
     if (isRunning) {
       game.giveCardToPlayer(player);
 
-      update();
-
       if (game.playerHasBust()) {
         isRunning = false;
         showGameStatus(R.string.game_status_bust);
       }
 
-      showPlayerCards();
+      update();
     }
   }
 

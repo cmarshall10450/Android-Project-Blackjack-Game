@@ -13,10 +13,12 @@
     android:id="@+id/button"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="16dp"
-    android:layout_marginStart="16dp"
+    android:layout_marginBottom="44dp"
+    android:layout_marginStart="80dp"
+    android:background="@color/hitBtn"
     android:onClick="onHitClick"
     android:text="@string/hit_btn"
+    android:textColor="@color/white"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintStart_toStartOf="parent"/>
 
@@ -24,63 +26,14 @@
     android:id="@+id/button2"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="16dp"
-    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="44dp"
+    android:layout_marginEnd="76dp"
+    android:background="@color/standBtn"
     android:onClick="onStandClick"
     android:text="@string/stand_btn"
+    android:textColor="@color/white"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"/>
-
-  <TextView
-    android:id="@+id/player_card_2"
-    android:layout_width="wrap_content"
-    android:layout_height="52dp"
-    android:layout_marginEnd="8dp"
-    android:layout_marginStart="8dp"
-    android:layout_marginTop="288dp"
-    android:background="@android:color/background_light"
-    android:gravity="center"
-    android:padding="8dp"
-    android:text="4C"
-    android:textSize="24sp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.544"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"/>
-
-  <TextView
-    android:id="@+id/player_card_1"
-    android:layout_width="wrap_content"
-    android:layout_height="52dp"
-    android:layout_marginEnd="8dp"
-    android:layout_marginStart="8dp"
-    android:layout_marginTop="288dp"
-    android:background="@android:color/background_light"
-    android:gravity="center"
-    android:padding="8dp"
-    android:text="4C"
-    android:textSize="24sp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.444"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"/>
-
-  <TextView
-    android:id="@+id/dealer_card"
-    android:layout_width="wrap_content"
-    android:layout_height="52dp"
-    android:layout_marginEnd="8dp"
-    android:layout_marginStart="8dp"
-    android:layout_marginTop="16dp"
-    android:background="@android:color/background_light"
-    android:gravity="center"
-    android:padding="8dp"
-    android:text="4C"
-    android:textSize="24sp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.501"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"/>
 
   <TextView
     android:id="@+id/hand_value"
@@ -122,13 +75,13 @@
     android:id="@+id/replay_btn"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="8dp"
     android:layout_marginEnd="8dp"
     android:layout_marginStart="8dp"
     android:layout_marginTop="8dp"
+    android:background="@color/replayBtn"
     android:onClick="onReplayClick"
     android:text="@string/replay_btn"
-    app:layout_constraintBottom_toTopOf="@+id/player_card_1"
+    android:textColor="@color/white"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/game_status"/>
@@ -161,6 +114,7 @@
     android:layout_height="wrap_content"
     android:layout_marginStart="8dp"
     android:layout_marginTop="28dp"
+    android:background="@color/White50"
     android:text="1000"
     android:textSize="30sp"
     app:layout_constraintStart_toEndOf="@+id/bet_decrease_btn"
@@ -170,8 +124,9 @@
     android:id="@+id/textView4"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginEnd="8dp"
     android:layout_marginTop="28dp"
+    android:background="@color/White50"
+    android:paddingRight="8dp"
     android:text="@string/cash_text"
     android:textSize="18sp"
     app:layout_constraintEnd_toStartOf="@+id/cash_amount"
@@ -183,9 +138,51 @@
     android:layout_height="wrap_content"
     android:layout_marginEnd="32dp"
     android:layout_marginTop="28dp"
+    android:background="@color/White50"
     android:text="1000"
     android:textSize="18sp"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintTop_toTopOf="parent"/>
+
+  <ScrollView
+    android:id="@+id/player_cards_scroll_view"
+    android:layout_width="235dp"
+    android:layout_height="83dp"
+    android:layout_marginBottom="64dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginStart="16dp"
+    android:orientation="horizontal"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent">
+
+    <LinearLayout
+      android:id="@+id/player_cards_list"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:orientation="horizontal">
+    </LinearLayout>
+  </ScrollView>
+
+  <ScrollView
+    android:id="@+id/dealer_cards_scroll_view"
+    android:layout_width="206dp"
+    android:layout_height="83dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="28dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <LinearLayout
+      android:id="@+id/dealer_cards_list"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:orientation="horizontal">
+    </LinearLayout>
+  </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

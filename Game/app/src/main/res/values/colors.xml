@@ -3,4 +3,9 @@
   <color name="colorPrimary">#3F51B5</color>
   <color name="colorPrimaryDark">#303F9F</color>
   <color name="colorAccent">#FF4081</color>
+  <color name="white">#FFFFFF</color>
+  <color name="White50">#80ffffff</color>
+  <color name="hitBtn">#00C851</color>
+  <color name="standBtn">#ff4444</color>
+  <color name="replayBtn">#33b5e5</color>
 </resources>
