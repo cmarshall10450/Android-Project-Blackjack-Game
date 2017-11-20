@@ -8,4 +8,6 @@
   <string name="game_status_bust">You have bust!</string>
   <string name="replay_btn">Replay</string>
   <string name="cash_text">Cash:</string>
+  <string name="play_btn">Play</string>
+  <string name="rules_btn">Rules</string>
 </resources>

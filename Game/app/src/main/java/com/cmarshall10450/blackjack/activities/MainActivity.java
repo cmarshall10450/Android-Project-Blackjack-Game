@@ -67,8 +67,6 @@ public class MainActivity extends AppCompatActivity {
     playerCardsList = findViewById(R.id.player_cards_list);
     dealerCardsList = findViewById(R.id.dealer_cards_list);
 
-    update();
-
     // If the dealer starts with blackjack then the game is immediately lost
     if (game.playerHasBlackjack(dealer)) {
       showGameStatus(R.string.game_status_lost);
@@ -79,6 +77,8 @@ public class MainActivity extends AppCompatActivity {
       showGameStatus(R.string.game_status_won);
       payBet(bet * 2.5);
     }
+
+    update();
   }
 
   private void update() {
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
 
     for (Card card : cards) {
       TextView tv = new TextView(this);
-      tv.setTextSize(48);
+      tv.setTextSize(40);
       tv.setBackgroundColor(getResources().getColor(R.color.white));
       tv.setPadding(16, 32, 16, 32);
 
