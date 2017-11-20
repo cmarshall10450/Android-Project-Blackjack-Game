@@ -1,0 +1,11 @@
+<resources>
+  <string name="app_name">Blackjack</string>
+  <string name="hit_btn">Hit</string>
+  <string name="stand_btn">Stand</string>
+  <string name="game_status_won">You win!</string>
+  <string name="game_status_lost">You lost!</string>
+  <string name="game_status_tie">It was a tie!</string>
+  <string name="game_status_bust">You have bust!</string>
+  <string name="replay_btn">Replay</string>
+  <string name="cash_text">Cash:</string>
+</resources>
