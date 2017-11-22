@@ -17,20 +17,33 @@
     android:layout_marginStart="8dp"
     android:onClick="onPlayClick"
     android:text="@string/play_btn"
-    android:textSize="24sp"
+    android:textSize="30sp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.438"
+    app:layout_constraintHorizontal_bias="0.54"
     app:layout_constraintStart_toStartOf="parent"
     />
 
   <Button
     android:id="@+id/button4"
+    android:layout_width="95dp"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="40dp"
+    android:layout_marginEnd="8dp"
+    android:onClick="onRulesClick"
+    android:text="Rules"
+    android:textSize="24sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toStartOf="@+id/button3"/>
+
+  <Button
+    android:id="@+id/button7"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="36dp"
-    android:layout_marginStart="24dp"
-    android:text="Rules"
+    android:layout_marginBottom="40dp"
+    android:layout_marginStart="8dp"
+    android:onClick="onSettingsClick"
+    android:text="Settings"
     android:textSize="24sp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintStart_toEndOf="@+id/button3"/>

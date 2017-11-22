@@ -43,6 +43,10 @@ public class Player {
     return total;
   }
 
+  public void setStartingCash(double startingCash) {
+    money = startingCash;
+  }
+
   public void clearHand() {
     hand.clear();
   }

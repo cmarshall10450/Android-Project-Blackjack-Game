@@ -1,0 +1,32 @@
+BLACKJACK
+============================================================================================================
+
+1. Generate a number of decks to fill a shoe.
+
+2a. Each player makes a bet against the dealer.
+2b. The player can only make a bet that is less than the amount of funds that they have.
+
+3a. The player is given two cards from the deck
+3b. The dealer gets two cards - the first is face up and the second is face down, hidden from the player
+
+4a. If the player has 21 they have Blackjack and their bet is paid out at 3/2.
+4b. If the dealer has 21 all players lose their bet.
+
+5. If neither the player nor the dealer have 21 then the player is given the chance to STAND or HIT - 
+take another card
+
+6. If the player hits then they are given another card and this adds to the value of their hand
+
+7. If the player sticks then the dealer must draw cards until the value of the hand is greater than 16.
+If it is greater than 16 the dealer must STAND
+
+8. When both the player and the deal both STAND then the value of their hands are compared. 
+  1. The player wins if the value of their hand is greater than the dealer's hand
+  2. The dealer wins if the value of their hand is greater than the player's hand
+  3. The dealer wins on a draw
+  4. If the player wins their bet is paid out at evens
+  5. If the dealer wins then the player loses their bet
+
+
+
+

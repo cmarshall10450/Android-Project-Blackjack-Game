@@ -5,6 +5,7 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
+  android:background="@drawable/rules_bg"
   tools:context="com.cmarshall10450.blackjack.activities.RulesActivity">
 
   <TextView
@@ -16,6 +17,7 @@
     android:layout_marginStart="8dp"
     android:layout_marginTop="20dp"
     android:text="Rules"
+    android:textColor="@color/white"
     android:textSize="36sp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
@@ -26,14 +28,33 @@
 
   <TextView
     android:id="@+id/textView3"
-    android:layout_width="wrap_content"
-    android:layout_height="221dp"
+    android:layout_width="207dp"
+    android:layout_height="118dp"
     android:layout_marginBottom="8dp"
     android:layout_marginEnd="8dp"
     android:layout_marginStart="8dp"
-    android:text="TextView"
+    android:gravity="fill_vertical"
+    android:text="* Dealer must draw to 16\n* Dealer must stand on 17\n* Blackjack pays 3/2\n* Win pays evens"
+    android:textColor="@color/white"
+    android:textSize="18sp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/textView2"/>
+    app:layout_constraintTop_toBottomOf="@+id/textView2"
+    app:layout_constraintVertical_bias="0.197"/>
+
+  <Button
+    android:id="@+id/button5"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="84dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginStart="8dp"
+    android:onClick="onBackClick"
+    android:text="Back"
+    android:textSize="24sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.499"
+    app:layout_constraintStart_toStartOf="parent"/>
 </android.support.constraint.ConstraintLayout>

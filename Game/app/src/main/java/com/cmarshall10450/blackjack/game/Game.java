@@ -4,11 +4,6 @@ import com.cmarshall10450.blackjack.cards.Card;
 import com.cmarshall10450.blackjack.cards.Deck;
 
 public class Game {
-
-  public static final int PLAYER = 1;
-  public static final int DEALER = -1;
-  public static final int TIE = 0;
-
   private static final int BLACKJACK = 21;
 
   private Dealer dealer;
@@ -68,13 +63,13 @@ public class Game {
     return player;
   }
 
-  public int compareHands() {
+  public GameStatus compareHands() {
     if (player.getTotalValueOfCards() > dealer.getTotalValueOfCards()) {
-      return PLAYER;
+      return GameStatus.PLAYER;
     } else if (player.getTotalValueOfCards() < dealer.getTotalValueOfCards()) {
-      return DEALER;
+      return GameStatus.DEALER;
     } else {
-      return TIE;
+      return GameStatus.TIE;
     }
   }
 }
